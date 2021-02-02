@@ -37,7 +37,7 @@ Route::group([
     Route::prefix('auth')->group(function () {
         Route::post('/login', [\App\Http\Controllers\AuthsController::class, 'login']);
         Route::post('/logout', [\App\Http\Controllers\AuthsController::class, 'logout']);
-        Route::post('/refresh',  [\App\Http\Controllers\AuthsController::class, 'refresh']);
+        Route::post('/refresh_token',  [\App\Http\Controllers\AuthsController::class, 'refresh']);
     });
 
     Route::get('/profile',  [\App\Http\Controllers\AuthsController::class, 'userProfile']);
