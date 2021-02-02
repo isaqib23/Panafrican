@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('email')->unique();
-            $table->unsignedInteger('user_type_id');
+            $table->enum('user_type',['areaUser','regionalUser','superUser','superAdmin'])->nullable();
             $table->string('entity')->nullable();
             $table->unsignedInteger('region_id')->nullable();
             $table->unsignedInteger('country_id')->nullable();
@@ -33,7 +33,6 @@ class CreateUsersTable extends Migration
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('user_type_id')->references('id')->on('user_types');
             $table->foreign('region_id')->references('id')->on('regions');
             $table->foreign('country_id')->references('id')->on('countries');
             $table->foreign('area_id')->references('id')->on('areas');

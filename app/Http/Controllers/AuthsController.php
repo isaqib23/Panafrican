@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Transformers\UserTransformer;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,21 +35,11 @@ class AuthsController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param Requests\Login $request
      * @return JsonResponse
-     * @throws ValidationException
      */
-    public function login(Request $request){
-        $validator = Validator::make($request->all(), [
-            'email' => 'required|email',
-            'password' => 'required|string|min:6',
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
-        }
-
-        if (! $token = auth()->attempt($validator->validated())) {
+    public function login(Requests\Login $request){
+        if (! $token = auth()->attempt($request->all())) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
@@ -111,7 +102,7 @@ class AuthsController extends Controller
      * @return JsonResponse
      */
     public function userProfile() {
-        return response()->json(auth()->user());
+        return response()->json((new UserTransformer())->transform(auth()->user()));
     }
 
     /**
@@ -125,8 +116,8 @@ class AuthsController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60,
-            'user' => auth()->user()
+            //'expires_in' => auth()->factory()->getTTL() * 60,
+            'user' => (new UserTransformer())->transform(auth()->user())
         ]);
     }
 }

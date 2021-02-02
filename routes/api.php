@@ -36,10 +36,9 @@ Route::group([
     // Auth Routes
     Route::prefix('auth')->group(function () {
         Route::post('/login', [\App\Http\Controllers\AuthsController::class, 'login']);
-        Route::post('/register', [\App\Http\Controllers\AuthsController::class, 'register']);
         Route::post('/logout', [\App\Http\Controllers\AuthsController::class, 'logout']);
         Route::post('/refresh',  [\App\Http\Controllers\AuthsController::class, 'refresh']);
     });
 
-    Route::get('/user-profile',  [\App\Http\Controllers\AuthsController::class, 'userProfile']);
+    Route::get('/profile',  [\App\Http\Controllers\AuthsController::class, 'userProfile']);
 });

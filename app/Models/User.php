@@ -38,7 +38,7 @@ class User extends Authenticatable implements JWTSubject
      */
     protected $hidden = [
         'password',
-        'remember_token',
+        'remember_token'
     ];
 
     /**
@@ -66,5 +66,17 @@ class User extends Authenticatable implements JWTSubject
      */
     public function getJWTCustomClaims() {
         return [];
+    }
+
+    public function region(){
+        return $this->belongsTo(Region::class,'region_id');
+    }
+
+    public function country(){
+        return $this->belongsTo(Country::class,'country_id');
+    }
+
+    public function area(){
+        return $this->belongsTo(Area::class,'area_id');
     }
 }
