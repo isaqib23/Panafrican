@@ -10,4 +10,12 @@ class Area extends Model
     use HasFactory;
 
     protected $table = "areas";
+
+    /**
+     * @var array
+     */
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
 }

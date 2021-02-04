@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Region;
 use App\Transformers\UserTransformer;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -119,5 +120,13 @@ class AuthsController extends Controller
             //'expires_in' => auth()->factory()->getTTL() * 60,
             'user' => (new UserTransformer())->transform(auth()->user())
         ]);
+    }
+
+    public function regions_list(Request $request){
+        $regions = Region::with(['countries' => function($query){
+            $query->with('areas');
+        }])->get();
+
+        return response()->json($regions);
     }
 }

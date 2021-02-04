@@ -41,4 +41,24 @@ Route::group([
     });
 
     Route::get('/profile',  [\App\Http\Controllers\AuthsController::class, 'userProfile']);
+    Route::get('/regions',  [\App\Http\Controllers\AuthsController::class, 'regions_list']);
+
+    // Location Routes
+    Route::prefix('locations')->group(function () {
+        Route::post('/all', [\App\Http\Controllers\LocationController::class, 'index']);
+        Route::post('/create', [\App\Http\Controllers\LocationController::class, 'store']);
+    });
+
+    // Accounts Routes
+    Route::prefix('accounts')->group(function () {
+        Route::post('/all', [\App\Http\Controllers\AccountsController::class, 'index']);
+        Route::post('/create', [\App\Http\Controllers\AccountsController::class, 'store']);
+    });
+
+    // Branch Routes
+    Route::prefix('branch')->group(function () {
+        Route::post('/all', [\App\Http\Controllers\BranchesController::class, 'index']);
+        Route::post('/create', [\App\Http\Controllers\BranchesController::class, 'store']);
+        Route::post('/get_by_account', [\App\Http\Controllers\BranchesController::class, 'getByAccount']);
+    });
 });
