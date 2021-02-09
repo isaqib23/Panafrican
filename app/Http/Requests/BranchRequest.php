@@ -29,10 +29,7 @@ class BranchRequest extends BaseFormRequest
             'type'          => 'required|string',
             'location_id'   => 'required|integer|exists:locations,id',
             'website'       => 'required|string',
-            'par'           => 'required|integer',
-            'region_id'     => 'required|integer',
-            'country_id'    => 'required|integer',
-            'area_id'       => 'required|integer',
+            'par'           => 'required|integer'
         ];
     }
 }

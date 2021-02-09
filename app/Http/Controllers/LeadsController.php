@@ -66,12 +66,19 @@ class LeadsController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function getLeadById(Request $request){
-        if(!$request->input('id')){
-            return response()->json(['message' => 'Lead id is required'],422);
-        }
+    public function getLeadById(Requests\DeleteLeadRequest $request){
         $branch = $this->repository->findWhere(['id' => $request->input('id')])->first();
 
         return response()->json((new LeadsTransformer())->transform($branch));
+    }
+
+    /**
+     * @param Requests\DeleteLeadRequest $request
+     * @return JsonResponse
+     */
+    public function delete(Requests\DeleteLeadRequest $request){
+        $this->repository->delete($request->input('id'));
+
+        return response()->json(['message' => 'Lead deleted successfully'],200);
     }
 }

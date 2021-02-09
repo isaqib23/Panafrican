@@ -4,17 +4,17 @@ namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\AccountsRepository;
-use App\Entities\Accounts;
-use App\Validators\AccountsValidator;
+use App\Repositories\NoteRepository;
+use App\Entities\Note;
+use App\Validators\NoteValidator;
 use Prettus\Validator\Exceptions\ValidatorException;
 
 /**
- * Class AccountsRepositoryEloquent.
+ * Class NoteRepositoryEloquent.
  *
  * @package namespace App\Repositories;
  */
-class AccountsRepositoryEloquent extends BaseRepository implements AccountsRepository
+class NoteRepositoryEloquent extends BaseRepository implements NoteRepository
 {
     /**
      * Specify Model class name
@@ -23,7 +23,7 @@ class AccountsRepositoryEloquent extends BaseRepository implements AccountsRepos
      */
     public function model()
     {
-        return Accounts::class;
+        return Note::class;
     }
 
 
@@ -45,8 +45,11 @@ class AccountsRepositoryEloquent extends BaseRepository implements AccountsRepos
         return $this->updateOrCreate(
             ["id" => $request->input('id')],
             [
-                "name"          => $request->input('name'),
-                "rank"          => $request->input('rank'),
+                "description"       => $request->input('description'),
+                "type"              => $request->input('type'),
+                "type_id"           => $request->input('type_id'),
+                "branch_id"         => $request->input('branch_id'),
+                "created_by"        => auth()->id(),
                 "country_id"        => auth()->user()->country_id,
                 "region_id"         => auth()->user()->region_id,
                 "area_id"           => auth()->user()->area_id

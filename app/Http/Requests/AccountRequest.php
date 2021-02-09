@@ -25,10 +25,7 @@ class AccountRequest extends BaseFormRequest
     {
         return [
             'name'      => 'required|string',
-            'rank'      => 'required|string',
-            'region_id' => 'required|integer',
-            'country_id'=> 'required|integer',
-            'area_id'   => 'required|integer',
+            'rank'      => 'required|string'
         ];
     }
 }

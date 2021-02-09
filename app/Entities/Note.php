@@ -8,18 +8,17 @@ use App\Models\Region;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
 /**
- * Class Leads.
+ * Class Note.
  *
  * @package namespace App\Entities;
  */
-class Leads extends Model implements Transformable
+class Note extends Model implements Transformable
 {
-    use TransformableTrait, SoftDeletes;
+    use TransformableTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -27,24 +26,17 @@ class Leads extends Model implements Transformable
      * @var array
      */
     protected $fillable = [
-        'value',
-        'description',
-        'pipeline',
-        'pipeline_stage',
-        'sales_type',
-        'target_date',
-        'primary_contact',
-        'owner_id',
-        'source',
-        'account_id',
-        'branch_id',
-        'created_by',
-        'region_id',
-        'country_id',
-        'area_id'
+        "description",
+        "type",
+        "type_id",
+        "branch_id",
+        "created_by",
+        "country_id",
+        "region_id",
+        "area_id"
     ];
 
-    protected $table = 'leads';
+    protected $table = 'notes';
 
     /**
      * @return BelongsTo
@@ -70,22 +62,8 @@ class Leads extends Model implements Transformable
     /**
      * @return BelongsTo
      */
-    public function account(){
-        return $this->belongsTo(Accounts::class,'account_id');
-    }
-
-    /**
-     * @return BelongsTo
-     */
     public function branch(){
         return $this->belongsTo(Branch::class,'branch_id');
-    }
-
-    /**
-     * @return BelongsTo
-     */
-    public function owner(){
-        return $this->belongsTo(User::class,'owner_id');
     }
 
     /**

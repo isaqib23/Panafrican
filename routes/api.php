@@ -67,10 +67,17 @@ Route::group([
         Route::post('/all', [\App\Http\Controllers\LeadsController::class, 'index']);
         Route::post('/create', [\App\Http\Controllers\LeadsController::class, 'store']);
         Route::post('/get_by_id', [\App\Http\Controllers\LeadsController::class, 'getLeadById']);
+        Route::post('/delete_by_id', [\App\Http\Controllers\LeadsController::class, 'delete']);
     });
 
     // Users Routes
     Route::prefix('users')->group(function () {
         Route::post('/list', [\App\Http\Controllers\UsersController::class, 'index']);
+    });
+
+    // Notes Routes
+    Route::prefix('notes')->group(function () {
+        Route::post('/all', [\App\Http\Controllers\NotesController::class, 'index']);
+        Route::post('/create', [\App\Http\Controllers\NotesController::class, 'store']);
     });
 });

@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class LocationRequest extends BaseFormRequest
+class NotesRequest extends BaseFormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,11 +25,9 @@ class LocationRequest extends BaseFormRequest
     public function rules()
     {
         return [
-            'address'   => 'required|string',
-            'city'      => 'required|string',
-            'type'      => ['required', Rule::in(['machine','account_branch','account_site','account_office','panaf_branch','supplier'])],
-            'latitude'  => 'required',
-            'longitude' => 'required'
+            'description'       => 'required|string',
+            'type'              => ['required', Rule::in(['activity', 'contact', 'account', 'opportunity', 'lead'])],
+            'type_id'           => 'required|integer'
         ];
     }
 }

@@ -17,6 +17,7 @@ class CreateNotesTable extends Migration
             $table->increments('id');
             $table->text('description')->nullable();
             $table->enum('type',['activity', 'contact', 'account', 'opportunity', 'lead'])->nullable();
+            $table->integer('type_id');
             $table->unsignedInteger('branch_id');
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('region_id')->nullable();

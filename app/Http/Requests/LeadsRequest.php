@@ -35,11 +35,7 @@ class LeadsRequest extends BaseFormRequest
             'owner_id'          => 'required|integer|exists:users,id',
             'source'            => 'required|string',
             'account_id'        => 'required|integer|exists:accounts,id',
-            'branch_id'         => 'required|integer|exists:branches,id',
-            'created_by'        => 'required|integer|exists:users,id',
-            'region_id'         => 'required|integer|exists:regions,id',
-            'country_id'        => 'required|integer|exists:countries,id',
-            'area_id'           => 'required|integer|exists:areas,id'
+            'branch_id'         => 'required|integer|exists:branches,id'
         ];
     }
 }

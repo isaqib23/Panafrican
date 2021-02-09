@@ -50,9 +50,9 @@ class LocationsRepositoryEloquent extends BaseRepository implements LocationsRep
                 "type"          => $request->input('type'),
                 "latitude"      => $request->input('latitude'),
                 "longitude"     => $request->input('longitude'),
-                "region_id"     => $request->input('region_id'),
-                "country_id"    => $request->input('country_id'),
-                "area_id"       => $request->input('area_id'),
+                "country_id"        => auth()->user()->country_id,
+                "region_id"         => auth()->user()->region_id,
+                "area_id"           => auth()->user()->area_id
             ]
         );
     }
