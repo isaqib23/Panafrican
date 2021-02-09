@@ -16,7 +16,7 @@ class CreateRegionTable extends Migration
         Schema::create('regions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->enum('status',['active','disabled'])->default('active');
+            $table->enum('status',[1,0])->default(1);
             $table->timestamps();
         });
     }

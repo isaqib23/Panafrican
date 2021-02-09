@@ -28,11 +28,11 @@ class RegionSeeder extends Seeder
         ];
 
         foreach ($data as $key => $val){
-            $region = \DB::table('regions')->insertGetId(['name' => $key, 'status' => 'active', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
+            $region = \DB::table('regions')->insertGetId(['name' => $key, 'status' => 1, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
             foreach ($val as $key1 => $val1){
-                $country = \DB::table('countries')->insertGetId(['name' => $key1, 'region_id' => $region, 'status' => 'active', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
+                $country = \DB::table('countries')->insertGetId(['name' => $key1, 'region_id' => $region, 'status' => 1, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
                 foreach ($val1 as $key2 => $val2){
-                    \DB::table('areas')->insertGetId(['name' => $val2, 'country_id' => $country, 'region_id' => $region, 'status' => 'active', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
+                    \DB::table('areas')->insertGetId(['name' => $val2, 'country_id' => $country, 'region_id' => $region, 'status' => 1, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]);
                 }
             }
         }

@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6942902-a859-47a3-86e9-952a0181faaf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/panaf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/panaf.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Area.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Area.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Country.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Region.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Region.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Transformers/UserTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/UserTransformer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2013_01_30_113524_create_region_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2013_01_30_113524_create_region_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2013_01_30_113535_create_country_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2013_01_30_113535_create_country_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2013_01_30_113545_create_area_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2013_01_30_113545_create_area_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_30_114645_create_branch_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_30_114645_create_branch_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_30_152422_create_leads_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_30_152422_create_leads_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/RegionSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/RegionSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UserSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +183,9 @@
       <workItem from="1611932667076" duration="17286000" />
       <workItem from="1612274147847" duration="6308000" />
       <workItem from="1612370861244" duration="2452000" />
-      <workItem from="1612466395079" duration="9321000" />
+      <workItem from="1612466395079" duration="9973000" />
+      <workItem from="1612553828142" duration="15912000" />
+      <workItem from="1612849067146" duration="283000" />
     </task>
     <servers />
   </component>
@@ -189,13 +193,13 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612474908189">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612720347464">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1612474908189" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1612444241951">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1612720347464" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1612764272317">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1612444241951" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1612764272317" />
   </component>
 </project>

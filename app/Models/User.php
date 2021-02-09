@@ -4,13 +4,16 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 class User extends Authenticatable implements JWTSubject
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasRoles;
 
+    protected $guard_name = 'api';
     /**
      * The attributes that are mass assignable.
      *
@@ -68,15 +71,39 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
+    /**
+     * @return BelongsTo
+     */
     public function region(){
         return $this->belongsTo(Region::class,'region_id');
     }
 
+    /**
+     * @return BelongsTo
+     */
     public function country(){
         return $this->belongsTo(Country::class,'country_id');
     }
 
+    /**
+     * @return BelongsTo
+     */
     public function area(){
         return $this->belongsTo(Area::class,'area_id');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPermissions()
+    {
+        return $this->roles->map(function ($role) {
+            return $role->permissions;
+        })->collapse()->pluck('name')->unique();
+    }
+
+    public function getFullName()
+    {
+        return $this->first_name. ' '. $this->last_name;
     }
 }

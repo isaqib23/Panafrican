@@ -21,8 +21,8 @@ class UserSeeder extends Seeder
             ["first_name" => "Area", "last_name" => "User", "type" => "areaUser", "email" => "area@user.com"]
         ];
 
-        foreach ($users as $user) {
-            \DB::table('users')->insert([
+        foreach ($users as $key => $user) {
+            $user = User::create([
                 'first_name' => $user["first_name"],
                 'last_name' => $user["last_name"],
                 'email' => $user["email"],
@@ -36,6 +36,10 @@ class UserSeeder extends Seeder
                 'device_type' => 'web',
                 'device_uuid' => "abc123"
             ]);
+
+            if($key == 0){
+                $user->assignRole('Admin');
+            }
         }
     }
 }

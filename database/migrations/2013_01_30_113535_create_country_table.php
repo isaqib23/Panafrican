@@ -17,7 +17,7 @@ class CreateCountryTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->unsignedInteger('region_id');
-            $table->enum('status',['active','disabled'])->default('active');
+            $table->enum('status',[1,0])->default(1);
             $table->timestamps();
 
             $table->foreign('region_id')->references('id')->on('regions');

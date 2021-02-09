@@ -61,4 +61,16 @@ Route::group([
         Route::post('/create', [\App\Http\Controllers\BranchesController::class, 'store']);
         Route::post('/get_by_account', [\App\Http\Controllers\BranchesController::class, 'getByAccount']);
     });
+
+    // Leads Routes
+    Route::prefix('leads')->group(function () {
+        Route::post('/all', [\App\Http\Controllers\LeadsController::class, 'index']);
+        Route::post('/create', [\App\Http\Controllers\LeadsController::class, 'store']);
+        Route::post('/get_by_id', [\App\Http\Controllers\LeadsController::class, 'getLeadById']);
+    });
+
+    // Users Routes
+    Route::prefix('users')->group(function () {
+        Route::post('/list', [\App\Http\Controllers\UsersController::class, 'index']);
+    });
 });

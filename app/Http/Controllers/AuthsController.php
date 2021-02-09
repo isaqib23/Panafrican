@@ -122,6 +122,10 @@ class AuthsController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function regions_list(Request $request){
         $regions = Region::with(['countries' => function($query){
             $query->with('areas');

@@ -25,6 +25,7 @@ class UserTransformer extends TransformerAbstract
             'id'                => (int) $model->id,
             'first_name'        => (string) $model->first_name,
             'last_name'         => (string) $model->last_name,
+            'full_name'         => (string) $model->getFullName(),
             'email'             => (string) $model->email,
             'user_type'         => (string) $model->user_type,
             'entity'            => (string) $model->entity,
@@ -36,6 +37,7 @@ class UserTransformer extends TransformerAbstract
             'country_name'      => (string) $model->country->name,
             'area_id'           => (int) $model->area_id,
             'area_name'         => (string) $model->area->name,
+            'permissions'       => $model->getPermissions(),
         ];
     }
 }

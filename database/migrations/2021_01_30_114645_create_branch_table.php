@@ -28,6 +28,7 @@ class CreateBranchTable extends Migration
             $table->softDeletes();
             $table->timestamps();
 
+            $table->foreign('account_id')->references('id')->on('accounts');
             $table->foreign('location_id')->references('id')->on('locations');
             $table->foreign('region_id')->references('id')->on('regions');
             $table->foreign('country_id')->references('id')->on('countries');
