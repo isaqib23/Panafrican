@@ -63,7 +63,7 @@ class LeadsController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param Requests\DeleteLeadRequest $request
      * @return JsonResponse
      */
     public function getLeadById(Requests\DeleteLeadRequest $request){

@@ -3,18 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="a6942902-a859-47a3-86e9-952a0181faaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/Leads.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/Leads.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entities/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/Activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entities/Opportunity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/Opportunity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivitiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivitiesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LeadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LeadsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AccountRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AccountRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BranchRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BranchRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/LeadsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/LeadsRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/LocationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/LocationRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/AccountsRepositoryEloquent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/AccountsRepositoryEloquent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/BranchRepositoryEloquent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/BranchRepositoryEloquent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/LeadsRepositoryEloquent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/LeadsRepositoryEloquent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/LocationsRepositoryEloquent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/LocationsRepositoryEloquent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_30_152401_create_notes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_30_152401_create_notes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OpportunitiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OpportunitiesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ActivityRepositoryEloquent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ActivityRepositoryEloquent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/OpportunityRepositoryEloquent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/OpportunityRepositoryEloquent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_30_121238_create_opportunities_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_30_121238_create_opportunities_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_30_152350_create_activities_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_30_152350_create_activities_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -185,7 +182,9 @@
       <workItem from="1612370861244" duration="2452000" />
       <workItem from="1612466395079" duration="9973000" />
       <workItem from="1612553828142" duration="15912000" />
-      <workItem from="1612849067146" duration="5264000" />
+      <workItem from="1612849067146" duration="6021000" />
+      <workItem from="1613049367781" duration="7842000" />
+      <workItem from="1613144681368" duration="4642000" />
     </task>
     <servers />
   </component>
@@ -197,14 +196,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1612868741387" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612869319483">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613146843509">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1612869319483" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1612764272317">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1613146843509" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1613130723933">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1612764272317" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1613130723933" />
     <state x="507" y="178" key="NewPhpClassDialog" timestamp="1612867940146">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

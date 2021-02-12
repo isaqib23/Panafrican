@@ -23,6 +23,7 @@ class CreateActivitiesTable extends Migration
             $table->dateTime('closing_date')->nullable();
             $table->enum('status',['in-progress','finished','cancelled','on-hold'])->nullable();
             $table->integer('completed')->nullable();
+            $table->unsignedInteger('account_id');
             $table->unsignedInteger('branch_id');
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('region_id')->nullable();
@@ -35,6 +36,7 @@ class CreateActivitiesTable extends Migration
             $table->foreign('region_id')->references('id')->on('regions');
             $table->foreign('country_id')->references('id')->on('countries');
             $table->foreign('area_id')->references('id')->on('areas');
+            $table->foreign('account_id')->references('id')->on('accounts');
             $table->foreign('branch_id')->references('id')->on('branches');
             $table->foreign('created_by')->references('id')->on('users');
         });

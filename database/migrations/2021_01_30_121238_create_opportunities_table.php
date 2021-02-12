@@ -15,7 +15,7 @@ class CreateOpportunitiesTable extends Migration
     {
         Schema::create('opportunities', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('value')->nullable();
+            $table->string('value')->nullable();
             $table->text('description')->nullable();
             $table->enum('pipeline',['sales','after sale'])->nullable();
             $table->enum('pipeline_stage',['demo', 'tender', 'negotiation', 'won', 'lost', 'initial', 'quote'])->nullable();
@@ -28,6 +28,7 @@ class CreateOpportunitiesTable extends Migration
             $table->enum('status',['open', 'close'])->default('open');
             $table->dateTime('closing_date')->nullable();
             $table->unsignedInteger('created_by');
+            $table->unsignedInteger('account_id');
             $table->unsignedInteger('branch_id');
             $table->unsignedInteger('region_id')->nullable();
             $table->unsignedInteger('country_id')->nullable();
@@ -39,6 +40,7 @@ class CreateOpportunitiesTable extends Migration
             $table->foreign('region_id')->references('id')->on('regions');
             $table->foreign('country_id')->references('id')->on('countries');
             $table->foreign('area_id')->references('id')->on('areas');
+            $table->foreign('account_id')->references('id')->on('accounts');
             $table->foreign('branch_id')->references('id')->on('branches');
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('owner_id')->references('id')->on('users');

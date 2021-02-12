@@ -80,4 +80,20 @@ Route::group([
         Route::post('/all', [\App\Http\Controllers\NotesController::class, 'index']);
         Route::post('/create', [\App\Http\Controllers\NotesController::class, 'store']);
     });
+
+    // Opportunity Routes
+    Route::prefix('opportunities')->group(function () {
+        Route::post('/all', [\App\Http\Controllers\OpportunitiesController::class, 'index']);
+        Route::post('/create', [\App\Http\Controllers\OpportunitiesController::class, 'store']);
+        Route::post('/get_by_id', [\App\Http\Controllers\OpportunitiesController::class, 'getOpportunityById']);
+        Route::post('/delete_by_id', [\App\Http\Controllers\OpportunitiesController::class, 'delete']);
+    });
+
+    // Activities Routes
+    Route::prefix('activities')->group(function () {
+        Route::post('/all', [\App\Http\Controllers\ActivitiesController::class, 'index']);
+        Route::post('/create', [\App\Http\Controllers\ActivitiesController::class, 'store']);
+        Route::post('/get_by_id', [\App\Http\Controllers\ActivitiesController::class, 'getActivityById']);
+        Route::post('/delete_by_id', [\App\Http\Controllers\ActivitiesController::class, 'delete']);
+    });
 });

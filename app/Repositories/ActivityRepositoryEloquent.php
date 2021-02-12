@@ -25,7 +25,7 @@ class ActivityRepositoryEloquent extends BaseRepository implements ActivityRepos
         return Activity::class;
     }
 
-    
+
 
     /**
      * Boot up the repository, pushing criteria
@@ -34,5 +34,27 @@ class ActivityRepositoryEloquent extends BaseRepository implements ActivityRepos
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
-    
+
+    public function store($request) {
+        return $this->updateOrCreate(
+            ["id" => $request->input('id')],
+            [
+                'title'             => $request->input('title'),
+                'description'       => $request->input('description'),
+                'type'              => $request->input('type'),
+                'topic'             => $request->input('topic'),
+                'target_date'       => $request->input('target_date'),
+                'closing_date'      => $request->input('closing_date'),
+                'status'            => $request->input('status'),
+                'completed'         => $request->input('completed'),
+                'account_id'        => $request->input('account_id'),
+                'branch_id'         => $request->input('branch_id'),
+                'status'            => 'in-progress',
+                "created_by"        => auth()->id(),
+                "country_id"        => auth()->user()->country_id,
+                "region_id"         => auth()->user()->region_id,
+                "area_id"           => auth()->user()->area_id
+            ]
+        );
+    }
 }
