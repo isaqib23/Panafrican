@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return \File::get(public_path() . '/build/main/index.html');
+    return \File::get(public_path() . '/build/web/index.html');
 });
