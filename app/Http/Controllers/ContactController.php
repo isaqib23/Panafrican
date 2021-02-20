@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use App\Http\Requests\deleteContactRequest;
 use App\Transformers\ContactTransform;
 use Illuminate\Http\Request;
@@ -40,12 +41,11 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Requests\OpportunityRequest $request
+     * @param ContactRequest $request
      *
      * @return Response
-     *
      */
-    public function store(Requests\OpportunityRequest $request)
+    public function store(ContactRequest $request)
     {
         $contact = $this->repository->store($request);
 

@@ -48,12 +48,11 @@ class SuppliersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Requests\OpportunityRequest $request
+     * @param Requests\SupplierRequest $request
      *
      * @return Response
-     *
      */
-    public function store(Requests\OpportunityRequest $request)
+    public function store(Requests\SupplierRequest $request)
     {
         $supplier = $this->repository->store($request);
 

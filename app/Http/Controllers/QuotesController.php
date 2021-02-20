@@ -49,12 +49,11 @@ class QuotesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Requests\OpportunityRequest $request
+     * @param Requests\QuoteRequest $request
      *
      * @return Response
-     *
      */
-    public function store(Requests\OpportunityRequest $request)
+    public function store(Requests\QuoteRequest $request)
     {
         $quote = $this->repository->store($request);
 
