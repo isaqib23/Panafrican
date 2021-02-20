@@ -47,7 +47,7 @@ class OpportunityTransformer extends TransformerAbstract
             'closing_date'      => (string) $opportunity->closing_date,
             'owner_id'          => (int) $opportunity->owner_id,
             'owner_name'        => (string) $opportunity->owner->getFullName(),
-            'account_id'        => (int) $opportunity->account,
+            'account_id'        => (int) $opportunity->account_id,
             'account_name'      => (string) $opportunity->account->name,
             'branch_id'         => (int) $opportunity->branch_id,
             'branch_name'       => (string) $opportunity->branch->name,

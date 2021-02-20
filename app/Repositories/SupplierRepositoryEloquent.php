@@ -4,17 +4,17 @@ namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\AccountsRepository;
-use App\Entities\Accounts;
-use App\Validators\AccountsValidator;
+use App\Repositories\SupplierRepository;
+use App\Entities\Supplier;
+use App\Validators\SupplierValidator;
 use Prettus\Validator\Exceptions\ValidatorException;
 
 /**
- * Class AccountsRepositoryEloquent.
+ * Class SupplierRepositoryEloquent.
  *
  * @package namespace App\Repositories;
  */
-class AccountsRepositoryEloquent extends BaseRepository implements AccountsRepository
+class SupplierRepositoryEloquent extends BaseRepository implements SupplierRepository
 {
     /**
      * Specify Model class name
@@ -23,10 +23,10 @@ class AccountsRepositoryEloquent extends BaseRepository implements AccountsRepos
      */
     public function model()
     {
-        return Accounts::class;
+        return Supplier::class;
     }
 
-
+    
 
     /**
      * Boot up the repository, pushing criteria
@@ -45,8 +45,10 @@ class AccountsRepositoryEloquent extends BaseRepository implements AccountsRepos
         return $this->updateOrCreate(
             ["id" => $request->input('id')],
             [
-                "name"          => $request->input('name'),
-                "rank"          => $request->input('rank'),
+                'name'          => $request->input('name'),
+                'type'          => $request->input('type'),
+                'location_id'   => $request->input('location_id'),
+                'created_by'    => auth()->id(),
                 "country_id"    => ($request->has('country_id')) ? $request->input('country_id') : auth()->user()->country_id,
                 "region_id"     => ($request->has('region_id')) ? $request->input('region_id') : auth()->user()->region_id,
                 "area_id"       => ($request->has('area_id')) ? $request->input('area_id') : auth()->user()->area_id

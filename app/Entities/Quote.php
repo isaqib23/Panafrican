@@ -12,11 +12,11 @@ use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
 /**
- * Class Contact.
+ * Class Quote.
  *
  * @package namespace App\Entities;
  */
-class Contact extends Model implements Transformable
+class Quote extends Model implements Transformable
 {
     use TransformableTrait;
 
@@ -26,12 +26,14 @@ class Contact extends Model implements Transformable
      * @var array
      */
     protected $fillable = [
-        'first_name',
-        'last_name',
-        'position',
-        'role_description',
-        'email',
-        'phone',
+        'quote_number',
+        'value',
+        'description',
+        'sent_at',
+        'expiry_date',
+        'type',
+        'status',
+        'opportunity_id',
         'account_id',
         'branch_id',
         'created_by',
@@ -40,7 +42,7 @@ class Contact extends Model implements Transformable
         'area_id'
     ];
 
-    protected $table = 'contacts';
+    protected $table = "quotes";
 
     /**
      * @return BelongsTo
@@ -75,6 +77,13 @@ class Contact extends Model implements Transformable
      */
     public function branch(){
         return $this->belongsTo(Branch::class,'branch_id');
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function opportunity(){
+        return $this->belongsTo(Opportunity::class,'opportunity_id');
     }
 
     /**

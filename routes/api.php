@@ -96,4 +96,28 @@ Route::group([
         Route::post('/get_by_id', [\App\Http\Controllers\ActivitiesController::class, 'getActivityById']);
         Route::post('/delete_by_id', [\App\Http\Controllers\ActivitiesController::class, 'delete']);
     });
+
+    // Contacts Routes
+    Route::prefix('contacts')->group(function () {
+        Route::post('/all', [\App\Http\Controllers\ContactController::class, 'index']);
+        Route::post('/create', [\App\Http\Controllers\ContactController::class, 'store']);
+        Route::post('/get_by_id', [\App\Http\Controllers\ContactController::class, 'getContactById']);
+        Route::post('/delete_by_id', [\App\Http\Controllers\ContactController::class, 'delete']);
+    });
+
+    // Supplier Routes
+    Route::prefix('suppliers')->group(function () {
+        Route::post('/all', [\App\Http\Controllers\SuppliersController::class, 'index']);
+        Route::post('/create', [\App\Http\Controllers\SuppliersController::class, 'store']);
+        Route::post('/get_by_id', [\App\Http\Controllers\SuppliersController::class, 'getSupplierById']);
+        Route::post('/delete_by_id', [\App\Http\Controllers\SuppliersController::class, 'delete']);
+    });
+
+    // Quotes Routes
+    Route::prefix('quotes')->group(function () {
+        Route::post('/all', [\App\Http\Controllers\QuotesController::class, 'index']);
+        Route::post('/create', [\App\Http\Controllers\QuotesController::class, 'store']);
+        Route::post('/get_by_id', [\App\Http\Controllers\QuotesController::class, 'getQuoteById']);
+        Route::post('/delete_by_id', [\App\Http\Controllers\QuotesController::class, 'delete']);
+    });
 });

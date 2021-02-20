@@ -20,6 +20,10 @@ use App\Repositories\NoteRepository;
 use App\Repositories\NoteRepositoryEloquent;
 use App\Repositories\OpportunityRepository;
 use App\Repositories\OpportunityRepositoryEloquent;
+use App\Repositories\QuoteRepository;
+use App\Repositories\QuoteRepositoryEloquent;
+use App\Repositories\SupplierRepository;
+use App\Repositories\SupplierRepositoryEloquent;
 use App\Repositories\UsersRepository;
 use App\Repositories\UsersRepositoryEloquent;
 use Illuminate\Support\ServiceProvider;
@@ -53,6 +57,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(ContactRepository::class, ContactRepositoryEloquent::class);
         $this->app->bind(OpportunityRepository::class, OpportunityRepositoryEloquent::class);
         $this->app->bind(NoteRepository::class, NoteRepositoryEloquent::class);
+        $this->app->bind(SupplierRepository::class, SupplierRepositoryEloquent::class);
+        $this->app->bind(QuoteRepository::class, QuoteRepositoryEloquent::class);
         //:end-bindings:
     }
 }

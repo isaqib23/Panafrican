@@ -4,17 +4,17 @@ namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\ContactRepository;
-use App\Entities\Contact;
-use App\Validators\ContactValidator;
+use App\Repositories\QuoteRepository;
+use App\Entities\Quote;
+use App\Validators\QuoteValidator;
 use Prettus\Validator\Exceptions\ValidatorException;
 
 /**
- * Class ContactRepositoryEloquent.
+ * Class QuoteRepositoryEloquent.
  *
  * @package namespace App\Repositories;
  */
-class ContactRepositoryEloquent extends BaseRepository implements ContactRepository
+class QuoteRepositoryEloquent extends BaseRepository implements QuoteRepository
 {
     /**
      * Specify Model class name
@@ -23,7 +23,7 @@ class ContactRepositoryEloquent extends BaseRepository implements ContactReposit
      */
     public function model()
     {
-        return Contact::class;
+        return Quote::class;
     }
 
     
@@ -45,12 +45,14 @@ class ContactRepositoryEloquent extends BaseRepository implements ContactReposit
         return $this->updateOrCreate(
             ["id" => $request->input('id')],
             [
-                'first_name'        => $request->input('first_name'),
-                'last_name'         => $request->input('last_name'),
-                'position'          => $request->input('position'),
-                'role_description'  => $request->input('role_description'),
-                'email'             => $request->input('email'),
-                'phone'             => $request->input('phone'),
+                'quote_number'      => $request->input('quote_number'),
+                'value'             => $request->input('value'),
+                'description'       => $request->input('description'),
+                'sent_at'           => $request->input('sent_at'),
+                'expiry_date'       => $request->input('expiry_date'),
+                'type'              => $request->input('type'),
+                'status'            => $request->input('status'),
+                'opportunity_id'    => $request->input('opportunity_id'),
                 'account_id'        => $request->input('account_id'),
                 'branch_id'         => $request->input('branch_id'),
                 'created_by'        => auth()->id(),

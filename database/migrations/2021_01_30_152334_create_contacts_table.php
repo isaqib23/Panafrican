@@ -21,6 +21,7 @@ class CreateContactsTable extends Migration
             $table->text('role_description')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
+            $table->unsignedInteger('account_id');
             $table->unsignedInteger('branch_id');
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('region_id')->nullable();
@@ -34,6 +35,7 @@ class CreateContactsTable extends Migration
             $table->foreign('country_id')->references('id')->on('countries');
             $table->foreign('area_id')->references('id')->on('areas');
             $table->foreign('branch_id')->references('id')->on('branches');
+            $table->foreign('account_id')->references('id')->on('accounts');
             $table->foreign('created_by')->references('id')->on('users');
         });
     }

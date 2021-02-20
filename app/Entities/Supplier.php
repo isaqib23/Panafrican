@@ -6,17 +6,18 @@ use App\Models\Area;
 use App\Models\Country;
 use App\Models\Region;
 use App\Models\User;
+use Database\Seeders\Location;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
 /**
- * Class Contact.
+ * Class Supplier.
  *
  * @package namespace App\Entities;
  */
-class Contact extends Model implements Transformable
+class Supplier extends Model implements Transformable
 {
     use TransformableTrait;
 
@@ -26,21 +27,16 @@ class Contact extends Model implements Transformable
      * @var array
      */
     protected $fillable = [
-        'first_name',
-        'last_name',
-        'position',
-        'role_description',
-        'email',
-        'phone',
-        'account_id',
-        'branch_id',
-        'created_by',
+        'name',
+        'type',
         'region_id',
         'country_id',
-        'area_id'
+        'area_id',
+        'location_id',
+        'created_by'
     ];
 
-    protected $table = 'contacts';
+    protected $table = "suppliers";
 
     /**
      * @return BelongsTo
@@ -66,21 +62,14 @@ class Contact extends Model implements Transformable
     /**
      * @return BelongsTo
      */
-    public function account(){
-        return $this->belongsTo(Accounts::class,'account_id');
-    }
-
-    /**
-     * @return BelongsTo
-     */
-    public function branch(){
-        return $this->belongsTo(Branch::class,'branch_id');
-    }
-
-    /**
-     * @return BelongsTo
-     */
     public function author(){
         return $this->belongsTo(User::class,'created_by');
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function location(){
+        return $this->belongsTo(Location::class,'location_id');
     }
 }
