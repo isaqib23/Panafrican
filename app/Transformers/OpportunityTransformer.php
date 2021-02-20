@@ -34,6 +34,7 @@ class OpportunityTransformer extends TransformerAbstract
     public function transform(Opportunity $opportunity)
     {
         return [
+            'id'                => (int) $opportunity->id,
             'value'             => (int) $opportunity->value,
             'description'       => (string) $opportunity->description,
             'pipeline'          => (string) $opportunity->pipeline,
