@@ -20,7 +20,19 @@ class Contact extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'position',
+        'role_description',
+        'email',
+        'phone',
+        'branch_id',
+        'created_by',
+        'region_id',
+        'country_id',
+        'area_id'
+    ];
 
     protected $table = 'contacts';
 
