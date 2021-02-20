@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a6942902-a859-47a3-86e9-952a0181faaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/ContactTransform.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/ContactTransform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/QuoteTransform.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/QuoteTransform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/SupplierTransform.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/SupplierTransform.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +180,7 @@
       <workItem from="1613454247036" duration="60000" />
       <workItem from="1613488711583" duration="644000" />
       <workItem from="1613585078844" duration="621000" />
-      <workItem from="1613814986641" duration="9043000" />
+      <workItem from="1613814986641" duration="9346000" />
     </task>
     <servers />
   </component>
