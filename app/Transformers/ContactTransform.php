@@ -34,6 +34,7 @@ class ContactTransform extends TransformerAbstract
     public function transform(Contact $contact)
     {
         return [
+            'id'                => (int) $contact->id,
             'first_name'        => (string) $contact->first_name,
             'last_name'         => (string) $contact->last_name,
             'position'          => (string) $contact->position,

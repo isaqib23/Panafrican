@@ -34,6 +34,7 @@ class SupplierTransform extends TransformerAbstract
     public function transform(Supplier $supplier)
     {
         return [
+            'id'                => (int) $supplier->id,
             'name'              => (string) $supplier->type,
             'type'              => (string) $supplier->name,
             'location'          => (object) (new LocationTransformer())->transform($supplier->location),

@@ -34,6 +34,7 @@ class QuoteTransform extends TransformerAbstract
     public function transform(Quote $quote)
     {
         return [
+            'id'                => (int) $quote->id,
             'quote_number'      => (string) $quote->quote_number,
             'value'             => (int) $quote->value,
             'description'       => (string) $quote->description,
