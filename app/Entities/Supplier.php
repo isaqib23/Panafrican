@@ -6,7 +6,6 @@ use App\Models\Area;
 use App\Models\Country;
 use App\Models\Region;
 use App\Models\User;
-use Database\Seeders\Location;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Prettus\Repository\Contracts\Transformable;
@@ -70,6 +69,6 @@ class Supplier extends Model implements Transformable
      * @return BelongsTo
      */
     public function location(){
-        return $this->belongsTo(Location::class,'location_id');
+        return $this->belongsTo(Locations::class,'location_id');
     }
 }
