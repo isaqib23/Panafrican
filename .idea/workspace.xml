@@ -181,7 +181,7 @@
       <workItem from="1613488711583" duration="644000" />
       <workItem from="1613585078844" duration="621000" />
       <workItem from="1613814986641" duration="11722000" />
-      <workItem from="1613913521231" duration="347000" />
+      <workItem from="1613913521231" duration="467000" />
     </task>
     <servers />
   </component>
@@ -209,6 +209,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1613817944036" />
+    <state x="379" y="96" width="607" height="536" key="find.popup" timestamp="1613913953558">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="96" width="607" height="536" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1613913953558" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1613488715251">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ContactRequest;
 use App\Http\Requests\DeleteContactRequest;
 use App\Transformers\ContactTransform;
 use Illuminate\Http\Request;
