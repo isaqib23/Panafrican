@@ -53,10 +53,10 @@ class ContactController extends Controller
     }
 
     /**
-     * @param Requests\deleteContactRequest $request
+     * @param deleteContactRequest $request
      * @return JsonResponse
      */
-    public function getContactById(Requests\deleteContactRequest $request){
+    public function getContactById(deleteContactRequest $request){
         $contact = $this->repository->findWhere(['id' => $request->input('id')])->first();
 
         return response()->json((new ContactTransform())->transform($contact));
