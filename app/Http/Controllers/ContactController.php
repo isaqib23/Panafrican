@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\DeleteContactRequest;
 use App\Transformers\ContactTransform;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+
 use App\Repositories\ContactRepository;
 use Illuminate\Http\Response;
 
@@ -40,11 +41,11 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param ContactRequest $request
+     * @param Request\ContactRequest $request
      *
      * @return Response
      */
-    public function store(ContactRequest $request)
+    public function store(Request\ContactRequest $request)
     {
         $contact = $this->repository->store($request);
 
@@ -52,20 +53,20 @@ class ContactController extends Controller
     }
 
     /**
-     * @param DeleteContactRequest $request
+     * @param Request\DeleteContactRequest $request
      * @return JsonResponse
      */
-    public function getContactById(DeleteContactRequest $request){
+    public function getContactById(Request\DeleteContactRequest $request){
         $contact = $this->repository->findWhere(['id' => $request->input('id')])->first();
 
         return response()->json((new ContactTransform())->transform($contact));
     }
 
     /**
-     * @param deleteContactRequest $request
+     * @param Request\DeleteContactRequest $request
      * @return JsonResponse
      */
-    public function delete(DeleteContactRequest $request){
+    public function delete(Request\DeleteContactRequest $request){
         $this->repository->delete($request->input('id'));
 
         return response()->json(['message' => 'Contact deleted successfully'],200);
