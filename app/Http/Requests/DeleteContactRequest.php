@@ -24,7 +24,7 @@ class DeleteContactRequest extends BaseFormRequest
     public function rules()
     {
         return [
-            'id'        => 'required|integer|contacts:leads,id',
+            'id'        => 'required|integer|exists:contacts,id',
         ];
     }
 }

@@ -29,9 +29,10 @@ class ContactController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $contacts = $this->repository->all()
             ->transformWith(new ContactTransform())->toArray();
