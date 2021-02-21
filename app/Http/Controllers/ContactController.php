@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
-use App\Http\Requests\deleteContactRequest;
+use App\Http\Requests\DeleteContactRequest;
 use App\Transformers\ContactTransform;
 use Illuminate\Http\Request;
 use App\Repositories\ContactRepository;
@@ -53,7 +53,7 @@ class ContactController extends Controller
     }
 
     /**
-     * @param $request
+     * @param DeleteContactRequest $request
      * @return JsonResponse
      */
     public function getContactById(DeleteContactRequest $request){
@@ -66,7 +66,7 @@ class ContactController extends Controller
      * @param deleteContactRequest $request
      * @return JsonResponse
      */
-    public function delete(deleteContactRequest $request){
+    public function delete(DeleteContactRequest $request){
         $this->repository->delete($request->input('id'));
 
         return response()->json(['message' => 'Contact deleted successfully'],200);
