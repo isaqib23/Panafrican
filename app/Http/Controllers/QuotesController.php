@@ -71,10 +71,10 @@ class QuotesController extends Controller
     }
 
     /**
-     * @param TableDelete $request
+     * @param Requests\deleteQuoteRequest $request
      * @return JsonResponse
      */
-    public function delete(TableDelete $request){
+    public function delete(Requests\deleteQuoteRequest $request){
         $this->repository->delete($request->input('id'));
 
         return response()->json(['message' => 'Quote deleted successfully'],200);
