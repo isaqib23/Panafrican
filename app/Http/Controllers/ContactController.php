@@ -6,6 +6,7 @@ use App\Transformers\ContactTransform;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
+use App\Http\Requests;
 use App\Repositories\ContactRepository;
 use Illuminate\Http\Response;
 
@@ -53,20 +54,20 @@ class ContactController extends Controller
     }
 
     /**
-     * @param Request\DeleteContactRequest $request
+     * @param Requests\DeleteContactRequest $request
      * @return JsonResponse
      */
-    public function getContactById(Request\DeleteContactRequest $request){
+    public function getContactById(Requests\DeleteContactRequest $request){
         $contact = $this->repository->findWhere(['id' => $request->input('id')])->first();
 
         return response()->json((new ContactTransform())->transform($contact));
     }
 
     /**
-     * @param Request\DeleteContactRequest $request
+     * @param Requests\DeleteContactRequest $request
      * @return JsonResponse
      */
-    public function delete(Request\DeleteContactRequest $request){
+    public function delete(Requests\DeleteContactRequest $request){
         $this->repository->delete($request->input('id'));
 
         return response()->json(['message' => 'Contact deleted successfully'],200);
