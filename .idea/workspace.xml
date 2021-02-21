@@ -4,6 +4,7 @@
     <list default="true" id="a6942902-a859-47a3-86e9-952a0181faaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/deleteContactRequest.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +182,7 @@
       <workItem from="1613488711583" duration="644000" />
       <workItem from="1613585078844" duration="621000" />
       <workItem from="1613814986641" duration="11722000" />
-      <workItem from="1613913521231" duration="62000" />
+      <workItem from="1613913521231" duration="246000" />
     </task>
     <servers />
   </component>
