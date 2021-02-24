@@ -29,7 +29,7 @@ Route::get('clear_cache', function () {
 });
 
 Route::group([
-    'middleware' => 'api',
+    'middleware' => ['log.route','api'],
     'prefix' => 'v1.0'
 
 ], function ($router) {

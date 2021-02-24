@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6942902-a859-47a3-86e9-952a0181faaf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/panaf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/panaf.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/Quote.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/Quote.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/Supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/Supplier.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuotesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuotesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/logging.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/logging.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +144,8 @@
       <path value="$PROJECT_DIR$/vendor/league/fractal" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-fractal" />
       <path value="$PROJECT_DIR$/vendor/spatie/fractalistic" />
+      <path value="$PROJECT_DIR$/vendor/arcanedev/log-viewer" />
+      <path value="$PROJECT_DIR$/vendor/arcanedev/support" />
     </include_path>
   </component>
   <component name="ProjectId" id="1nkSbHaL5l1y4yYTFtxoWeuELzy" />
@@ -184,7 +191,9 @@
       <workItem from="1613488711583" duration="644000" />
       <workItem from="1613585078844" duration="621000" />
       <workItem from="1613814986641" duration="11722000" />
-      <workItem from="1613913521231" duration="1638000" />
+      <workItem from="1613913521231" duration="2246000" />
+      <workItem from="1614099317563" duration="610000" />
+      <workItem from="1614187630332" duration="2583000" />
     </task>
     <servers />
   </component>
@@ -200,10 +209,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1613823855834" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1613909155229">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1614141696632">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1613909155229" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1614141696632" />
     <state x="507" y="178" key="NewPhpClassDialog" timestamp="1612867940146">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

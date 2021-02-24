@@ -75,6 +75,7 @@ class QuotesController extends Controller
      * @return JsonResponse
      */
     public function delete(Requests\deleteQuoteRequest $request){
+
         $this->repository->delete($request->input('id'));
 
         return response()->json(['message' => 'Quote deleted successfully'],200);
