@@ -247,7 +247,7 @@
     </div>
 
     {{-- Footer --}}
-    <footer class="main-footer">
+{{--    <footer class="main-footer">
         <div class="container-fluid">
             <p class="text-muted pull-left">
                 LogViewer - <span class="badge badge-info">version {{ log_viewer()->version() }}</span>
@@ -256,7 +256,7 @@
                 Created with <i class="fa fa-heart"></i> by ARCANEDEV <sup>&copy;</sup>
             </p>
         </div>
-    </footer>
+    </footer>--}}
 
     {{-- Scripts --}}
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
