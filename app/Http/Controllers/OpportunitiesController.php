@@ -67,7 +67,11 @@ class OpportunitiesController extends Controller
     public function getOpportunityById(Requests\DeleteOpportunityRequest $request){
         $opportunity = $this->repository->findWhere(['id' => $request->input('id')])->first();
 
-        return response()->json((new OpportunityTransformer())->transform($opportunity));
+        if(!is_null($opportunity)){
+            $opportunity = (new OpportunityTransformer())->transform($opportunity);
+        }
+
+        return response()->json($opportunity);
     }
 
     /**

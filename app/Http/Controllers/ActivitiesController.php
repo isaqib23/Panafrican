@@ -66,7 +66,11 @@ class ActivitiesController extends Controller
     public function getActivityById(Requests\DeleteActivityRequest $request){
         $opportunity = $this->repository->findWhere(['id' => $request->input('id')])->first();
 
-        return response()->json((new ActivityTransformer())->transform($opportunity));
+        if(!is_null($opportunity)){
+            $opportunity = (new ActivityTransformer())->transform($opportunity);
+        }
+
+        return response()->json($opportunity);
     }
 
     /**

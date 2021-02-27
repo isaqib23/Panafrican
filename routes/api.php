@@ -120,4 +120,36 @@ Route::group([
         Route::post('/get_by_id', [\App\Http\Controllers\QuotesController::class, 'getQuoteById']);
         Route::post('/delete_by_id', [\App\Http\Controllers\QuotesController::class, 'delete']);
     });
+
+    // Sale Target Routes
+    Route::prefix('sales')->group(function () {
+        Route::post('/all', [\App\Http\Controllers\SaleTargetsController::class, 'index']);
+        Route::post('/create', [\App\Http\Controllers\SaleTargetsController::class, 'store']);
+        Route::post('/get_by_id', [\App\Http\Controllers\SaleTargetsController::class, 'getSaleById']);
+        Route::post('/delete_by_id', [\App\Http\Controllers\SaleTargetsController::class, 'delete']);
+    });
+
+    // Document Routes
+    Route::prefix('documents')->group(function () {
+        Route::post('/all', [\App\Http\Controllers\DocumentsController::class, 'index']);
+        Route::post('/create', [\App\Http\Controllers\DocumentsController::class, 'store']);
+        Route::post('/get_by_id', [\App\Http\Controllers\DocumentsController::class, 'getDocumentById']);
+        Route::post('/delete_by_id', [\App\Http\Controllers\DocumentsController::class, 'delete']);
+    });
+
+    // Machine Routes
+    Route::prefix('machines')->group(function () {
+        Route::post('/all', [\App\Http\Controllers\MachinesController::class, 'index']);
+        Route::post('/create', [\App\Http\Controllers\MachinesController::class, 'store']);
+        Route::post('/get_by_id', [\App\Http\Controllers\MachinesController::class, 'getMachineById']);
+        Route::post('/delete_by_id', [\App\Http\Controllers\MachinesController::class, 'delete']);
+    });
+
+    // Boms Routes
+    Route::prefix('boms')->group(function () {
+        Route::post('/all', [\App\Http\Controllers\BomsController::class, 'index']);
+        Route::post('/create', [\App\Http\Controllers\BomsController::class, 'store']);
+        Route::post('/get_by_id', [\App\Http\Controllers\BomsController::class, 'getBomById']);
+        Route::post('/delete_by_id', [\App\Http\Controllers\BomsController::class, 'delete']);
+    });
 });

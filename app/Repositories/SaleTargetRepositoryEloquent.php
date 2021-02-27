@@ -4,17 +4,17 @@ namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\OpportunityRepository;
-use App\Entities\Opportunity;
-use App\Validators\OpportunityValidator;
+use App\Repositories\SaleTargetRepository;
+use App\Entities\SaleTarget;
+use App\Validators\SaleTargetValidator;
 use Prettus\Validator\Exceptions\ValidatorException;
 
 /**
- * Class OpportunityRepositoryEloquent.
+ * Class SaleTargetRepositoryEloquent.
  *
  * @package namespace App\Repositories;
  */
-class OpportunityRepositoryEloquent extends BaseRepository implements OpportunityRepository
+class SaleTargetRepositoryEloquent extends BaseRepository implements SaleTargetRepository
 {
     /**
      * Specify Model class name
@@ -23,10 +23,10 @@ class OpportunityRepositoryEloquent extends BaseRepository implements Opportunit
      */
     public function model()
     {
-        return Opportunity::class;
+        return SaleTarget::class;
     }
 
-
+    
 
     /**
      * Boot up the repository, pushing criteria
@@ -45,17 +45,10 @@ class OpportunityRepositoryEloquent extends BaseRepository implements Opportunit
         return $this->updateOrCreate(
             ["id" => $request->input('id')],
             [
-                'value'             => $request->input('value'),
-                'description'       => $request->input('description'),
-                'pipeline'          => $request->input('pipeline'),
-                'pipeline_stage'    => $request->input('pipeline_stage'),
-                'sales_type'        => $request->input('sales_type'),
-                'target_date'       => $request->input('target_date'),
-                'primary_contact'   => $request->input('primary_contact'),
-                'owner_id'          => $request->input('owner_id'),
-                'source'            => $request->input('source'),
-                'probability'       => $request->input('probability'),
-                'closing_date'      => $request->input('closing_date'),
+                'sale_type'         => $request->input('sale_type'),
+                'budget'            => $request->input('budget'),
+                'actual'            => $request->input('actual'),
+                'month'             => $request->input('month'),
                 'account_id'        => $request->input('account_id'),
                 'branch_id'         => $request->input('branch_id'),
                 "created_by"        => auth()->id(),
@@ -64,6 +57,5 @@ class OpportunityRepositoryEloquent extends BaseRepository implements Opportunit
                 "area_id"           => ($request->has('area_id')) ? $request->input('area_id') : auth()->user()->area_id
             ]
         );
-
     }
 }

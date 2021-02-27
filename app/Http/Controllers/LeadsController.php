@@ -69,7 +69,11 @@ class LeadsController extends Controller
     public function getLeadById(Requests\DeleteLeadRequest $request){
         $branch = $this->repository->findWhere(['id' => $request->input('id')])->first();
 
-        return response()->json((new LeadsTransformer())->transform($branch));
+        if(!is_null($branch)){
+            $branch = (new LeadsTransformer())->transform($branch);
+        }
+
+        return response()->json($branch);
     }
 
     /**

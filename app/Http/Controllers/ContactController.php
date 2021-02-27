@@ -61,7 +61,11 @@ class ContactController extends Controller
     public function getContactById(Requests\DeleteContactRequest $request){
         $contact = $this->repository->findWhere(['id' => $request->input('id')])->first();
 
-        return response()->json((new ContactTransform())->transform($contact));
+        if(!is_null($contact)){
+            $contact = (new ContactTransform())->transform($contact);
+        }
+
+        return response()->json($contact);
     }
 
     /**

@@ -13,11 +13,11 @@ use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
 /**
- * Class Note.
+ * Class Machine.
  *
  * @package namespace App\Entities;
  */
-class Note extends Model implements Transformable
+class Machine extends Model implements Transformable
 {
     use TransformableTrait, SoftDeletes;
 
@@ -27,17 +27,22 @@ class Note extends Model implements Transformable
      * @var array
      */
     protected $fillable = [
-        "description",
-        "type",
-        "type_id",
-        "branch_id",
-        "created_by",
-        "country_id",
-        "region_id",
-        "area_id"
+        'oem',
+        'model',
+        'serial',
+        'unit_no',
+        'type',
+        'application',
+        'location_id',
+        'account_id',
+        'branch_id',
+        'region_id',
+        'country_id',
+        'area_id',
+        'created_by'
     ];
 
-    protected $table = 'notes';
+    protected $table = "machines";
 
     /**
      * @return BelongsTo
@@ -63,6 +68,13 @@ class Note extends Model implements Transformable
     /**
      * @return BelongsTo
      */
+    public function account(){
+        return $this->belongsTo(Accounts::class,'account_id');
+    }
+
+    /**
+     * @return BelongsTo
+     */
     public function branch(){
         return $this->belongsTo(Branch::class,'branch_id');
     }
@@ -72,5 +84,12 @@ class Note extends Model implements Transformable
      */
     public function author(){
         return $this->belongsTo(User::class,'created_by');
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function location(){
+        return $this->belongsTo(Locations::class,'location_id');
     }
 }

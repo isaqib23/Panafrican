@@ -66,7 +66,11 @@ class SuppliersController extends Controller
     public function getSupplierById(Requests\deleteSupplierRequest $request){
         $supplier = $this->repository->findWhere(['id' => $request->input('id')])->first();
 
-        return response()->json((new SupplierTransform())->transform($supplier));
+        if(!is_null($supplier)){
+            $supplier =  (new SupplierTransform())->transform($supplier);
+        }
+
+        return response()->json($supplier);
     }
 
     /**

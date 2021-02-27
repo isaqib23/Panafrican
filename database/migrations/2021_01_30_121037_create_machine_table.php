@@ -27,6 +27,7 @@ class CreateMachineTable extends Migration
             $table->unsignedInteger('region_id')->nullable();
             $table->unsignedInteger('country_id')->nullable();
             $table->unsignedInteger('area_id')->nullable();
+            $table->unsignedInteger('created_by')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
@@ -37,6 +38,7 @@ class CreateMachineTable extends Migration
             $table->foreign('account_id')->references('id')->on('accounts');
             $table->foreign('branch_id')->references('id')->on('branches');
             $table->foreign('location_id')->references('id')->on('locations');
+            $table->foreign('created_by')->references('id')->on('users');
         });
     }
 

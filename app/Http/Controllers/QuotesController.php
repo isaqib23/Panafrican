@@ -67,7 +67,11 @@ class QuotesController extends Controller
     public function getQuoteById(Requests\deleteQuoteRequest $request){
         $quote = $this->repository->findWhere(['id' => $request->input('id')])->first();
 
-        return response()->json((new QuoteTransform())->transform($quote));
+        if(!is_null($quote)){
+            $quote = (new QuoteTransform())->transform($quote);
+        }
+
+        return response()->json($quote);
     }
 
     /**

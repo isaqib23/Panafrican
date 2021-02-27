@@ -13,11 +13,11 @@ use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
 /**
- * Class Note.
+ * Class Document.
  *
  * @package namespace App\Entities;
  */
-class Note extends Model implements Transformable
+class Document extends Model implements Transformable
 {
     use TransformableTrait, SoftDeletes;
 
@@ -27,17 +27,18 @@ class Note extends Model implements Transformable
      * @var array
      */
     protected $fillable = [
-        "description",
-        "type",
-        "type_id",
-        "branch_id",
-        "created_by",
-        "country_id",
-        "region_id",
-        "area_id"
+        'description',
+        'type',
+        'link',
+        'account_id',
+        'branch_id',
+        'created_by',
+        'region_id',
+        'country_id',
+        'area_id'
     ];
 
-    protected $table = 'notes';
+    protected $table = "documents";
 
     /**
      * @return BelongsTo
@@ -58,6 +59,13 @@ class Note extends Model implements Transformable
      */
     public function area(){
         return $this->belongsTo(Area::class,'area_id');
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function account(){
+        return $this->belongsTo(Accounts::class,'account_id');
     }
 
     /**

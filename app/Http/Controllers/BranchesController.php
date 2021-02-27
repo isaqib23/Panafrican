@@ -59,14 +59,11 @@ class BranchesController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param Requests\DeleteAccountRequest $request
      * @return JsonResponse
      */
-    public function getByAccount(Request $request)
+    public function getByAccount(Requests\DeleteAccountRequest $request)
     {
-        if(!$request->input('account_id')){
-            return response()->json(["message" => "The account id field is required."],422);
-        }
         $branches = $this->repository->findWhere(['account_id' => $request->input('account_id')])
             ->transformWith(new Branch())->toArray();
 
